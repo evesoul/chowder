@@ -10,7 +10,7 @@ export const getNavList = async () => {
     const { properties, icon } = item
     return {
       id: item.id,
-      title: properties.name.title[0].plain_text,
+      title: properties.name.title[0]?.plain_text || 'Null',
       url: properties.href.url,
       icon: icon?.[icon.type].url,
       tag: properties.tag?.[properties.tag.type]
